@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kafka-depl-image-potapov
+spec:
+  selector:
+    matchLabels:
+      app: kafka-image-potapov
+  template:
+    metadata:
+      labels:
+        app: kafka-image-potapov
+    spec:
+      containers:
+        - name: kafka-image-potapov
+          image: sopatrin/python-cw
+          resources:
+            limits:
+              memory: "64Mi"
+              cpu: "50m"
+            ports:
+              - containerPort: 8000
+            env:
+              - name: SERVICE_NAME
+                value: potapov.python-cw
+              - name: PORT
+                value: 8000
+              - name: HOST
+                value: 0.0.0.0
+              - name: ENCODING
+                value: UTF-8

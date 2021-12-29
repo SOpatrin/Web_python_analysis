@@ -1,6 +1,7 @@
 from io import StringIO
 
 import pandas
+import uvicorn
 from fastapi import FastAPI, UploadFile, File, HTTPException
 
 from analysis import Analysis
@@ -39,3 +40,6 @@ def get_countries_by_delta(country: str, delta: float):
         raise HTTPException(404, 'No such country')
     return analysis.get_countries_by_delta(country, delta)
 
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="0.0.0.0", port=5000, log_level="info")

@@ -1,0 +1,230 @@
+kind: Ingress
+apiVersion: networking.k8s.io/v1beta1
+metadata:
+  name: data-management-ingress
+  namespace: default
+  uid: 5b5ebd27-5421-474c-912c-42c69a0f3b9e
+  resourceVersion: '19958668'
+  generation: 39
+  creationTimestamp: '2021-12-15T10:29:48Z'
+  labels:
+    name: data-management-ingress
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: >
+      {"apiVersion":"networking.k8s.io/v1","kind":"Ingress","metadata":{"annotations":{"kubernetes.io/ingress.class":"nginx"},"labels":{"name":"data-management-ingress"},"name":"data-management-ingress","namespace":"default"},"spec":{"rules":[{"host":"datamanagement.lambda-it.ru","http":{"paths":[{"backend":{"service":{"name":"kafka-service-eremin","port":{"number":80}}},"path":"/eremin/api/v1/consume","pathType":"ImplementationSpecific"},{"backend":{"service":{"name":"kafka-service-eremin","port":{"number":80}}},"path":"/eremin/api/v1/produce","pathType":"ImplementationSpecific"},{"backend":{"service":{"name":"mongo-nodeport-svc","port":{"number":27017}}},"path":"/","pathType":"Prefix"},{"backend":{"service":{"name":"kafka-service-mongo-afonin","port":{"number":80}}},"path":"/afonin/api/v1/mongo/add","pathType":"ImplementationSpecific"},{"backend":{"service":{"name":"kafka-service-mongo-afonin","port":{"number":80}}},"path":"/afonin/api/v1/mongo/get","pathType":"ImplementationSpecific"},{"backend":{"service":{"name":"kafka-service-producer-afonin","port":{"number":80}}},"path":"/afonin/api/v1/sendmsg","pathType":"ImplementationSpecific"},{"backend":{"service":{"name":"service-image-afonin","port":{"number":80}}},"path":"/afonin/api/v1/image/getbyid","pathType":"ImplementationSpecific"},{"backend":{"service":{"name":"service-image-afonin","port":{"number":80}}},"path":"/afonin/api/v1/image/getbyname","pathType":"ImplementationSpecific"},{"backend":{"service":{"name":"service-image-afonin","port":{"number":80}}},"path":"/afonin/api/v1/image/getsize","pathType":"ImplementationSpecific"},{"backend":{"service":{"name":"service-image-afonin","port":{"number":80}}},"path":"/afonin/api/v1/image/modify","pathType":"ImplementationSpecific"},{"backend":{"service":{"name":"service-image-afonin","port":{"number":80}}},"path":"/afonin/api/v1/image/add","pathType":"ImplementationSpecific"},{"backend":{"service":{"name":"service-image-afonin","port":{"number":80}}},"path":"/afonin/api/v1/image/delete","pathType":"ImplementationSpecific"},{"backend":{"service":{"name":"service-image-rubtsov","port":{"number":80}}},"path":"/rubtsov/api/v1/image/getbyid/","pathType":"ImplementationSpecific"},{"backend":{"service":{"name":"service-image-rubtsov","port":{"number":80}}},"path":"/rubtsov/api/v1/image/getbyname/","pathType":"ImplementationSpecific"},{"backend":{"service":{"name":"service-image-rubtsov","port":{"number":80}}},"path":"/rubtsov/api/v1/image/getinfo/","pathType":"ImplementationSpecific"},{"backend":{"service":{"name":"service-image-rubtsov","port":{"number":80}}},"path":"/rubtsov/api/v1/image/getmod/","pathType":"ImplementationSpecific"},{"backend":{"service":{"name":"service-image-rubtsov","port":{"number":80}}},"path":"/rubtsov/api/v1/image/add","pathType":"ImplementationSpecific"},{"backend":{"service":{"name":"service-image-rubtsov","port":{"number":80}}},"path":"/rubtsov/api/v1/image/delete/","pathType":"ImplementationSpecific"},{"backend":{"service":{"name":"service-covid-events","port":{"number":80}}},"path":"/events/covid/data","pathType":"ImplementationSpecific"},{"backend":{"service":{"name":"service-covid-events","port":{"number":80}}},"path":"/events/covid/graph_death","pathType":"ImplementationSpecific"},{"backend":{"service":{"name":"service-covid-events","port":{"number":80}}},"path":"/events/covid/graph_vac","pathType":"ImplementationSpecific"},{"backend":{"service":{"name":"service-covid-events","port":{"number":80}}},"path":"/events/covid/percent","pathType":"ImplementationSpecific"},{"backend":{"service":{"name":"service-covid-events","port":{"number":80}}},"path":"/events/covid/delete","pathType":"ImplementationSpecific"},{"backend":{"service":{"name":"service-covid-events","port":{"number":80}}},"path":"/events/covid/continents","pathType":"ImplementationSpecific"},{"backend":{"service":{"name":"service-covid-events","port":{"number":80}}},"path":"/events/covid/correlation","pathType":"ImplementationSpecific"},{"backend":{"service":{"name":"service-covid-events","port":{"number":80}}},"path":"/events/covid/top_death","pathType":"ImplementationSpecific"},{"backend":{"service":{"name":"service-covid-events","port":{"number":80}}},"path":"/events/covid/graph_death_percent","pathType":"ImplementationSpecific"},{"backend":{"service":{"name":"service-covid-events","port":{"number":80}}},"path":"/events/covid/top_vac","pathType":"ImplementationSpecific"},{"backend":{"service":{"name":"service-covid-events","port":{"number":80}}},"path":"/events/covid/countries","pathType":"ImplementationSpecific"},{"backend":{"service":{"name":"pictures-service-razenkov","port":{"number":80}}},"path":"/razenkov/api/v1.0/info/","pathType":"ImplementationSpecific"},{"backend":{"service":{"name":"pictures-service-razenkov","port":{"number":80}}},"path":"/razenkov/api/v1.0/image_id/","pathType":"ImplementationSpecific"},{"backend":{"service":{"name":"pictures-service-razenkov","port":{"number":80}}},"path":"/razenkov/api/v1.0/image_name/","pathType":"ImplementationSpecific"},{"backend":{"service":{"name":"pictures-service-razenkov","port":{"number":80}}},"path":"/razenkov/api/v1.0/glue","pathType":"ImplementationSpecific"},{"backend":{"service":{"name":"pictures-service-razenkov","port":{"number":80}}},"path":"/razenkov/api/v1.0/send","pathType":"ImplementationSpecific"},{"backend":{"service":{"name":"pictures-service-razenkov","port":{"number":80}}},"path":"/razenkov/api/v1.0/delete/","pathType":"ImplementationSpecific"}]}}]}}
+    kubernetes.io/ingress.class: nginx
+  managedFields:
+    - manager: kubectl-client-side-apply
+      operation: Update
+      apiVersion: networking.k8s.io/v1
+      time: '2021-12-15T11:40:45Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+            f:kubernetes.io/ingress.class: {}
+          f:labels:
+            .: {}
+            f:name: {}
+        f:spec:
+          f:rules: {}
+    - manager: nginx-ingress-controller
+      operation: Update
+      apiVersion: networking.k8s.io/v1
+      time: '2021-12-15T11:41:22Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:loadBalancer:
+            f:ingress: {}
+spec:
+  rules:
+    - host: datamanagement.lambda-it.ru
+      http:
+        paths:
+          - path: /eremin/api/v1/consume
+            pathType: ImplementationSpecific
+            backend:
+              serviceName: kafka-service-eremin
+              servicePort: 80
+          - path: /eremin/api/v1/produce
+            pathType: ImplementationSpecific
+            backend:
+              serviceName: kafka-service-eremin
+              servicePort: 80
+          - path: /
+            pathType: Prefix
+            backend:
+              serviceName: mongo-nodeport-svc
+              servicePort: 27017
+          - path: /afonin/api/v1/mongo/add
+            pathType: ImplementationSpecific
+            backend:
+              serviceName: kafka-service-mongo-afonin
+              servicePort: 80
+          - path: /afonin/api/v1/mongo/get
+            pathType: ImplementationSpecific
+            backend:
+              serviceName: kafka-service-mongo-afonin
+              servicePort: 80
+          - path: /afonin/api/v1/sendmsg
+            pathType: ImplementationSpecific
+            backend:
+              serviceName: kafka-service-producer-afonin
+              servicePort: 80
+          - path: /afonin/api/v1/image/getbyid
+            pathType: ImplementationSpecific
+            backend:
+              serviceName: service-image-afonin
+              servicePort: 80
+          - path: /afonin/api/v1/image/getbyname
+            pathType: ImplementationSpecific
+            backend:
+              serviceName: service-image-afonin
+              servicePort: 80
+          - path: /afonin/api/v1/image/getsize
+            pathType: ImplementationSpecific
+            backend:
+              serviceName: service-image-afonin
+              servicePort: 80
+          - path: /afonin/api/v1/image/modify
+            pathType: ImplementationSpecific
+            backend:
+              serviceName: service-image-afonin
+              servicePort: 80
+          - path: /afonin/api/v1/image/add
+            pathType: ImplementationSpecific
+            backend:
+              serviceName: service-image-afonin
+              servicePort: 80
+          - path: /afonin/api/v1/image/delete
+            pathType: ImplementationSpecific
+            backend:
+              serviceName: service-image-afonin
+              servicePort: 80
+          - path: /rubtsov/api/v1/image/getbyid/
+            pathType: ImplementationSpecific
+            backend:
+              serviceName: service-image-rubtsov
+              servicePort: 80
+          - path: /rubtsov/api/v1/image/getbyname/
+            pathType: ImplementationSpecific
+            backend:
+              serviceName: service-image-rubtsov
+              servicePort: 80
+          - path: /rubtsov/api/v1/image/getinfo/
+            pathType: ImplementationSpecific
+            backend:
+              serviceName: service-image-rubtsov
+              servicePort: 80
+          - path: /rubtsov/api/v1/image/getmod/
+            pathType: ImplementationSpecific
+            backend:
+              serviceName: service-image-rubtsov
+              servicePort: 80
+          - path: /rubtsov/api/v1/image/add
+            pathType: ImplementationSpecific
+            backend:
+              serviceName: service-image-rubtsov
+              servicePort: 80
+          - path: /rubtsov/api/v1/image/delete/
+            pathType: ImplementationSpecific
+            backend:
+              serviceName: service-image-rubtsov
+              servicePort: 80
+          - path: /events/covid/data
+            pathType: ImplementationSpecific
+            backend:
+              serviceName: service-covid-events
+              servicePort: 80
+          - path: /events/covid/graph_death
+            pathType: ImplementationSpecific
+            backend:
+              serviceName: service-covid-events
+              servicePort: 80
+          - path: /events/covid/graph_vac
+            pathType: ImplementationSpecific
+            backend:
+              serviceName: service-covid-events
+              servicePort: 80
+          - path: /events/covid/percent
+            pathType: ImplementationSpecific
+            backend:
+              serviceName: service-covid-events
+              servicePort: 80
+          - path: /events/covid/delete
+            pathType: ImplementationSpecific
+            backend:
+              serviceName: service-covid-events
+              servicePort: 80
+          - path: /events/covid/continents
+            pathType: ImplementationSpecific
+            backend:
+              serviceName: service-covid-events
+              servicePort: 80
+          - path: /events/covid/correlation
+            pathType: ImplementationSpecific
+            backend:
+              serviceName: service-covid-events
+              servicePort: 80
+          - path: /events/covid/top_death
+            pathType: ImplementationSpecific
+            backend:
+              serviceName: service-covid-events
+              servicePort: 80
+          - path: /events/covid/graph_death_percent
+            pathType: ImplementationSpecific
+            backend:
+              serviceName: service-covid-events
+              servicePort: 80
+          - path: /events/covid/top_vac
+            pathType: ImplementationSpecific
+            backend:
+              serviceName: service-covid-events
+              servicePort: 80
+          - path: /events/covid/countries
+            pathType: ImplementationSpecific
+            backend:
+              serviceName: service-covid-events
+              servicePort: 80
+          - path: /razenkov/api/v1.0/info/
+            pathType: ImplementationSpecific
+            backend:
+              serviceName: pictures-service-razenkov
+              servicePort: 80
+          - path: /razenkov/api/v1.0/image_id/
+            pathType: ImplementationSpecific
+            backend:
+              serviceName: pictures-service-razenkov
+              servicePort: 80
+          - path: /razenkov/api/v1.0/image_name/
+            pathType: ImplementationSpecific
+            backend:
+              serviceName: pictures-service-razenkov
+              servicePort: 80
+          - path: /razenkov/api/v1.0/glue
+            pathType: ImplementationSpecific
+            backend:
+              serviceName: pictures-service-razenkov
+              servicePort: 80
+          - path: /razenkov/api/v1.0/send
+            pathType: ImplementationSpecific
+            backend:
+              serviceName: pictures-service-razenkov
+              servicePort: 80
+          - path: /razenkov/api/v1.0/delete/
+            pathType: ImplementationSpecific
+            backend:
+              serviceName: pictures-service-razenkov
+              servicePort: 80
+          - path: /countries
+            pathType: ImplementationSpecific
+            backend:
+              serviceName: potapov-service
+              servicePort: 80
+status:
+  loadBalancer:
+    ingress:
+      - ip: 51.250.22.164

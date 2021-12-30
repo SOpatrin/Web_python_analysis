@@ -13,10 +13,10 @@ spec:
     spec:
       containers:
         - name: potapov-image
-          image: sopatrin/python-cw:1.0.0
+          image: sopatrin/python-cw:1.0.2
           resources:
             limits:
-              memory: "64Mi"
+              memory: "512Mi"
               cpu: "50m"
           ports:
             - containerPort: 5000
